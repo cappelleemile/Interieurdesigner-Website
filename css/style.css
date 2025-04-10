@@ -1,0 +1,327 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #F9F6F2;
+    color: #3B2F2F;
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.2em;
+    letter-spacing: 1px;
+}
+
+h1,
+h2,
+h3 {
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+}
+
+h4 {
+    font-family: "Parisienne", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+a {
+    color: #3B2F2F;
+    text-decoration: none;
+}
+
+.container {
+    margin: auto;
+    margin-top: 50px;
+}
+
+#clearBoth {
+    clear: both;
+}
+
+.topBar {
+    width: 80%;
+    margin: auto;
+}
+
+header {
+    float: left;
+    margin-bottom: 25px;
+}
+
+nav {
+    float: right;
+    margin-bottom: 25px;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav li {
+    float: left;
+    margin-left: 45px;
+}
+
+nav li a {
+    position: relative;
+    /* Zorgt ervoor dat het pseudo-element gepositioneerd kan worden relatief aan de link */
+}
+
+nav li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -5px;
+    /* Pas dit aan indien je de lijn hoger of lager wilt positioneren */
+    height: 2px;
+    /* Dikte van de lijn */
+    background-color: #3B2F2F;
+    /* Kleur van de lijn */
+    transform: scaleX(0);
+    /* Begin met een lijn die horizontaal samengeperst is */
+    transform-origin: center;
+    /* Start de animatie vanuit het midden */
+    transition: transform 0.3s ease-out;
+    /* Zorgt voor een vloeiende overgang */
+}
+
+nav li a:hover::after {
+    transform: scaleX(1);
+    /* Breng de lijn op volledige breedte bij hover */
+}
+
+
+section {
+    position: relative;
+}
+
+.header {
+    position: relative;
+    width: 100%;
+}
+
+.header img {
+    width: 100%;
+    height: 50vh;
+    object-fit: cover;
+    display: block;
+}
+
+.headerText {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+}
+
+.header h1 {
+    font-size: 9vh;
+    padding-bottom: 20px;
+    color: #eeebe7;
+}
+
+.header h2 {
+    color: #eeebe7;
+    padding-bottom: 6vh;
+}
+
+#ctaButton {
+    border: 2px solid #eeebe7;
+    color: #F9F6F2;
+    padding: 20px 50px;
+    transition: 0.3s;
+}
+
+#ctaButton:hover {
+    background-color: #eeebe7;
+    color: #3B2F2F;
+}
+
+.projects {
+    margin: 60px auto;
+    text-align: center;
+    width: 80%;
+}
+
+.projectsRow {
+    /* display: block; */
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.projectsRow .project {
+    display: inline-block;
+    vertical-align: top;
+    /* Eventueel extra styling of marges */
+}
+
+.projectsRow h3 {
+    margin-top: 25px;
+    margin-bottom: 60px;
+    font-size: 2.2vh;
+}
+
+.projects h1 {
+    margin-bottom: 40px;
+    font-size: 1.8em;
+}
+
+/* Basis styling voor de projectcontainer en afbeelding */
+.project {
+    position: relative;
+    /* Nodig om de overlay absoluut binnen de container te positioneren */
+    display: inline-block;
+    margin-right: 8vh;
+    float: left;
+}
+
+.project:last-child {
+    margin-right: 0px;
+}
+
+.project img {
+    display: block;
+    width: 25vh;
+    height: 30vh;
+    object-fit: cover;
+}
+
+.project p {
+    font-size: 1vh;
+}
+
+/* Styling voor de overlay */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 30vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    /* Donkere overlay met 70% opacity */
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    opacity: 0;
+    /* Start onzichtbaar */
+    transition: opacity 0.3s ease;
+    /* Zorgt voor een vloeiende overgang */
+}
+
+.overlay p {
+    width: 80%;
+}
+
+/* Hover effect: overlay zichtbaar maken */
+.project:hover .overlay {
+    opacity: 1;
+}
+
+.about {
+    text-align: center;
+    padding: 150px 0px;
+    background-color: #E8DED2;
+}
+
+.about h1 {
+    margin-bottom: 20px;
+}
+
+.about p {
+    width: 80vh;
+    padding-bottom: 50px;
+    text-align: center;
+    margin: auto;
+}
+
+#aboutButton {
+    border: 2px solid #3B2F2F;
+    color: #3B2F2F;
+    padding: 20px 50px;
+    transition: 0.3s;
+}
+
+#aboutButton:hover {
+    background-color: #3B2F2F;
+    color: #F9F6F2;
+}
+
+footer {
+    margin: 50px auto;
+    width: 80%;
+}
+
+#footer1 h3 {
+    font-size: 1.8em;
+    margin-bottom: 80px;
+}
+
+#footer2 h3, #footer3 h3 {
+    margin-left: -40px;
+} 
+
+#footer2 ul,
+#footer3 ul {
+    list-style-type: none;
+    margin-top: 20px;
+}
+
+#footer2 li,
+#footer3 li {
+    margin-left: -40px;
+    margin-top: 8px;
+}
+
+#footer1,
+#footer2,
+#footer3 {
+    float: left;
+    margin-right: 150px;
+}
+
+footer a {
+    position: relative;
+    /* Zorgt ervoor dat het pseudo-element correct gepositioneerd wordt */
+}
+
+footer a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    /* Begin links */
+    bottom: -2px;
+    /* Pas dit aan als je de lijn hoger of lager wilt zetten */
+    transform: scaleX(0);
+    /* Start met de lijn samengeperst */
+    transform-origin: left;
+    /* Start de animatie vanaf de linkerkant */
+    width: 100%;
+    height: 1px;
+    /* Dikte van de lijn */
+    background-color: #3B2F2F;
+    /* Kleur van de lijn */
+    transition: transform 0.3s ease;
+    /* Soepele overgang */
+}
+
+footer a:hover::after {
+    transform: scaleX(1);
+    /* De lijn wordt volledig zichtbaar bij hover */
+}
